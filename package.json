@@ -1,15 +1,22 @@
 {
-  "name": "my-app",
+  "name": "arcgis-esm-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
+    "postinstall": "npm run copy"
   },
   "dependencies": {
+    "@arcgis/core": "^4.18.1",
     "next": "10.0.5",
+    "next-transpile-modules": "^6.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0"
   }
 }
