@@ -2,10 +2,10 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-const EsriMapWithNoSSR = dynamic(
-  () => import("../components/EsriMap"),
-  { ssr: false }
-);
+// ArcGIS JS API doesn't currently work with SSR, so we turn it off for the component
+const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
+  ssr: false,
+});
 
 function Home() {
   return (
@@ -15,18 +15,11 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <h1 className={styles.title}>
+        Welcome to <a href="https://nextjs.org">Next.js!</a>
+      </h1>
 
-        <EsriMapWithNoSSR />
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-      </main>
+      <EsriMapWithNoSSR />
 
       <footer className={styles.footer}>
         <a
@@ -42,4 +35,4 @@ function Home() {
   );
 }
 
-export default Home
+export default Home;

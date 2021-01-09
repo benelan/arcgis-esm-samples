@@ -108,7 +108,7 @@ function EsriMap() {
             fuel_type: "Fuel_Type_Code",
             connector_types: "EV_Connector_Types",
             network: "EV_Network",
-            name  : "Station_Name",
+            name: "Station_Name",
           },
           config: {
             show_label: "true",
