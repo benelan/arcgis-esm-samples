@@ -13,7 +13,7 @@ Integrating React with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/co
 }
 ```
 
-The ArcGIS JSAPI does not currently work with SSR, so we need to disable it for the map component.
+The API does not currently work with SSR, so we need to disable it for the map component.
 ```js
 const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
   ssr: false,
