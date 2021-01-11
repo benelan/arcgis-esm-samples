@@ -43,7 +43,7 @@ export default {
     format: "es",
   },
   plugins: [
-		del({ targets: "public/build/chunks", runOnce: true, verbose: true }),
+    del({ targets: "public/build/chunks", runOnce: true, verbose: true }),
     svelte({
       compilerOptions: {
         // enable run-time checks when not in production
