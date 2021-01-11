@@ -15,7 +15,7 @@ Integrating Vue with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core
 
 The API does not currently work with SSR, so we need to disable it for the map component. We can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).
 
-```js
+```html
 <client-only>
   <EsriMap />
 </client-only>
