@@ -23,7 +23,7 @@ The API does not currently work with SSR, so we need to disable it for the map c
 
 However, `<client-only>` only skips rendering components on the server side; they will still execute. This causes problems for the API since it requires DOM Elements and doesn't ship with CommonJS modules. The solution is to only import the component when on the client side.
 
-```js
+```html
 <script>
 export default {
   components: {
