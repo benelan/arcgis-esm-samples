@@ -2,7 +2,8 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-// ArcGIS JS API doesn't currently work with SSR, so we turn it off for the component
+
+// The ArcGIS JSAPI does not currently work with SSR, so we need to disable it for the map component
 const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
   ssr: false,
 });

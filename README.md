@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# @arcgis/core
 
-## Getting Started
+The projects in this directory extend the samples provided in [Esri's repo](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples that integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS API for JavaScript with various frameworks, module bundlers and build tools.
 
-First, run the development server:
+## Get started
 
-```bash
-npm run dev
-# or
-yarn dev
+Install the modules into your project:
+
+```js
+npm install @arcgis/core
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then use `import` statements to load individual modules.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```js
+import WebMap from '@arcgis/core/Map';
+import MapView from '@arcgis/core/views/MapView';
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+const map = new Map({
+  basemap: "topo-vector"
+});
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+const view = new MapView({
+  container: "viewDiv",
+  map: map
+});
+```
 
-## Learn More
+## Copy assets
 
-To learn more about Next.js, take a look at the following resources:
+Make sure to copy the API’s assets, which includes styles, images, fonts, and localization files from the `@arcgis/core/assets` folder to your build directory. A simple way to accomplish this is to configure an NPM script that runs during your build process. For example, use npm to install `ncp` and configure a script in package.json to copy the assets folder. Here’s a React example:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+// package.json
+{
+    "script": {
+        "start": "npm run copy && react-scripts start",
+        "build": "npm run copy && react-scripts build",
+        "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets"
+    }
+}
+```
 
-## Deploy on Vercel
+## Configure CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The final step is to set up the CSS. Choose a theme and then configure your code to copy the theme files from @arcgis/core/assets/esri/themes/ into your project. Here’s a React example:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```js
+// React - index.js
+import '@arcgis/core/assets/esri/themes/dark/main.css';
+```
