@@ -5,7 +5,7 @@ import DictionaryRenderer from '@arcgis/core/renderers/DictionaryRenderer';
 import MapView from '@arcgis/core/views/MapView';
 import { onMount } from "svelte";
 
-onMount(async () => {
+onMount(() => {
 	/**
 	 * Initialize application
 	 */
