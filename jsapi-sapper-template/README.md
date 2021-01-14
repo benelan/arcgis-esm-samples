@@ -17,13 +17,13 @@ The API does not currently work with SSR, so we need to make sure the map compon
 
 ```html
 <script>
-	import { onMount } from 'svelte';
-	let EsriMap;
+  import { onMount } from 'svelte';
+  let EsriMap;
 
-	onMount(async () => {
-		const module = await import('../components/EsriMap.svelte');
-		EsriMap = module.default;
-	});
+  onMount(async () => {
+    const module = await import('../components/EsriMap.svelte');
+    EsriMap = module.default;
+  });
 </script>
 ```
 
