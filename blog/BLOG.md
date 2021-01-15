@@ -4,9 +4,6 @@ I am elated by the beta release of the [@arcgis/core](https://www.npmjs.com/pack
 
 If you are here for examples, take a look at the [Github repo](https://github.com/benelan/arcgis-esm-samples).
 
-## Server Side Rendering, You Say?
-
-
 ## The First Attempt
 
 <div style="text-align:center"><img src="./img/nuxt_logo.svg" alt="NuxtJS Logo" width="200"/></div>
