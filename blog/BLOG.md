@@ -4,7 +4,12 @@ I am elated by the beta release of the [@arcgis/core](https://www.npmjs.com/pack
 
 If you are here for examples, take a look at the [Github repo](https://github.com/benelan/arcgis-esm-samples).
 
+## Server Side Rendering, You Say?
+
+
 ## The First Attempt
+
+<div style="text-align:center"><img src="./img/nuxt_logo.svg" alt="NuxtJS Logo" width="200"/></div>
 
 If you tried this on your own, you likely ran into the following error message:
 
@@ -25,7 +30,6 @@ NuxtJS has a built in method for transpiling dependencies, [documented here](htt
 
 Once @arcgis/core is transpiled, you will be able to import the JSAPI ES modules. That should solve the issue if your application does not render a map. I included an example of a no-map solution using module transpilation in the [nuxt sample](https://github.com/benelan/arcgis-esm-samples/tree/main/jsapi-create-nuxt-app#non-map-workflows).
 
-
 However, most of us like maps in our apps. And this is where we run into the second error message:
 
 ```
@@ -36,7 +40,9 @@ This error is referring to a Document Object Model (DOM) [Element](https://devel
 
 ## Forgoing SSR for the ArcGIS Component
 
-The final solution for getting @argis/core working on a SSR framework is disabling server side rendering for the map component. I know, I know, that sounds like cheating right? It's actually a viable option. The rest of your application will still reap the benefits of SSR. How much SEO information lives in the map component anyway?
+<div style="text-align:center"><img src="./img/next_logo.svg" alt="NextJS Logo" width="200"/></div>
+
+The solution for getting @arcgis/core working on a SSR framework is disabling server side rendering for the map component. I know, I know, that sounds like cheating right? It's actually a viable option. The rest of your application will still reap the benefits of SSR. How much information for SEO lives in the map component anyway?
 
 Many SSR Frameworks provide the option, with varying degrees of difficulty, to only render a component on the client side. This is what we need. Of the options I explored, NextJS has the [clearest workflow](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr). Here is the code for using a component without SSR in NextJS:
 
@@ -50,6 +56,6 @@ const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
 
 That's it. Now you can use the EsriMapWithNoSSR component and the map will render!
 
-![Map in NextJS](./img/nextjs_map.jpg)
+![Map in NextJS](./img/next_map.jpg)
 
- I found solutions for NuxtJS and Sapper as well, which are included in the [Github repo](https://github.com/benelan/arcgis-esm-samples). The samples contain additional framework specific information.
+I found solutions for rendering a map in NuxtJS and Sapper as well, which are included in the [Github repo](https://github.com/benelan/arcgis-esm-samples). The samples contain additional framework specific documentation.
