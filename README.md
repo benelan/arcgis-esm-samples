@@ -1,6 +1,6 @@
 # @arcgis/core
 
-The samples in this repo extend those [provided by Esri](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS API for JavaScript with various frameworks, module bundlers and build tools.
+The samples in this repo extend those [provided by Esri](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS API for JavaScript with various frameworks, module bundlers and build tools. [Here](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/ssr-esm/) is the accompying blog post.
 
 ## Get started
 
