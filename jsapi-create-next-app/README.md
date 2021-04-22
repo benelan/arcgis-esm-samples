@@ -1,19 +1,6 @@
 # ArcGIS API for JavaScript with create-next-app
 
-Integrating React with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) does not require much manual configuration. The one requirement is having to copy the `@arcgis/core/assets` folder to the build. NextJS does not provide a clear method to do this during the build so, you can use [`ncp`](https://www.npmjs.com/package/ncp) to copy the files to the build directory on `postinstall`.
-
-```json
-// package.json
-{
-  "scripts": {
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
-    "postinstall": "npm run copy",
-    ...
-  },
-}
-```
-
-The API does not currently work with SSR, so we need to disable it for the map component.
+The JS API can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this by disabling SSR:
 ```js
 const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
   ssr: false,

@@ -1,6 +1,6 @@
 # Server Side Rendering Frameworks with @arcgis/core
 
-I am elated by the beta release of the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) ECMAScript Modules (ESM). The release is a major victory in the [campaign to modernize](https://www.youtube.com/watch?v=woTI3jB5Z2Q&feature=youtu.be&t=182) the ArcGIS API for JavaScript (JSAPI). Needless to say, I spent hours pouring over the ESM samples provided via the [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/master/esm-samples) Github repo. I then set out on the task of creating my own samples using Server Side Rendering (SSR) frameworks.
+I am elated by the beta release of the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) ECMAScript Modules (ESM). The release is a major victory in the [campaign to modernize](https://www.youtube.com/watch?v=woTI3jB5Z2Q&feature=youtu.be&t=182) the ArcGIS API for JavaScript (JSAPI). Needless to say, I spent hours pouring over the ESM samples provided via the [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/master/esm-samples) Github repo. I then set out on the task of creating my own samples using Server Side Rendering (SSR) frameworks. I suggest taking a look at this [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/announcements/es-modules-are-coming-soon-in-the-arcgis-api-for-javascript/) if you aren’t using SSR frameworks.
 
 If you are here for examples, take a look at the [Github repo](https://github.com/benelan/arcgis-esm-samples).
 
@@ -17,15 +17,15 @@ require() of ES modules is not supported.
 Instead rename FeatureLayer.js to end in .cjs, change the requiring code to use import(), or remove "type": "module" from ...
 ```
 
-ECMAScript modules on NodeJS are still [relatively new](https://nodejs.medium.com/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663). Therefore, ESMs are not currently supported on the server for [NextJS](https://nextjs.org/) nor [NuxtJS](https://nuxtjs.org/) (two of the most popular SSR frameworks for React and Vue respectively). The SSR Frameworks use CommonJS modules instead, which, to keep the package a reasonable size, are not included in @arcgis/core.
+ECMAScript modules on NodeJS are still [relatively new](https://nodejs.medium.com/announcing-core-node-js-support-for-ecmascript-modules-c5d6dc29b663). Therefore, ESMs are not currently supported on the server for [NextJS](https://nextjs.org/) nor [NuxtJS](https://nuxtjs.org/) (two of the most popular SSR frameworks for React and Vue respectively). The SSR frameworks use CommonJS modules instead, which are not included in ``@arcgis/core``. The omission of CommonJS modules cuts the package size roughly in half.
 
-As suggested in the error message, I started changing file extensions to cjs (CommonJS) or mjs (ECMAScript). However, it quickly diverged into a game of whack-a-mole. I came across another solution for using ES modules in SSR Frameworks: transpiling the dependencies with babel.
+As suggested in the error message, I started changing file extensions to ``cjs`` (CommonJS) or ``mjs`` (ECMAScript). However, it quickly diverged into a game of whack-a-mole. I came across another solution for using ES modules in SSR frameworks: transpiling the dependencies with babel.
 
-NuxtJS has a built in method for transpiling dependencies, [documented here](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-build#transpile). Transpiling @arcgis/core will take several minutes on the first build, so have patience! You will also see a few errors (below) concerning file size.
+NuxtJS has a built in method for transpiling dependencies, [documented here](https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-build#transpile). Transpiling ``@arcgis/core`` will take several minutes on the first build, so have patience! You will also see a few errors (below) concerning file size.
 
 ![Transpile error concerning file size in NuxtJS](./img/transpile_error.jpg)
 
-Once @arcgis/core is transpiled, you will be able to import the JSAPI ES modules. That should solve the issue if your application does not render a map. I included an example of a no-map solution using module transpilation in the [nuxt sample](https://github.com/benelan/arcgis-esm-samples/tree/main/jsapi-create-nuxt-app#non-map-workflows).
+Once ``@arcgis/core`` is transpiled, you will be able to import the JSAPI ES modules. That should solve the issue if your application does not render a map. I included an example of a no-map solution using module transpilation in the [nuxt sample](https://github.com/benelan/arcgis-esm-samples/tree/main/jsapi-create-nuxt-app#non-map-workflows).
 
 However, most of us like maps in our apps. And this is where we run into the second error message:
 
@@ -39,9 +39,9 @@ This error is referring to a Document Object Model (DOM) [Element](https://devel
 
 <div style="text-align:center"><img src="./img/next_logo.svg" alt="NextJS Logo" width="200"/></div>
 
-The solution for getting @arcgis/core working on a SSR framework is disabling server side rendering for the map component. I know, I know, that sounds like cheating right? It's actually a viable option. The rest of your application will still reap the benefits of SSR. How much information for SEO lives in the map component anyway?
+The solution for getting ``@arcgis/core`` working on a SSR framework is disabling server side rendering for the map component. I know, I know, that sounds like cheating right? It’s actually a viable option. The rest of your application will still reap the benefits of SSR. How much information for Search Engine Optimization (SEO) lives in the map component anyway?
 
-Many SSR Frameworks provide the option, with varying degrees of difficulty, to only render a component on the client side. This is what we need. Of the options I explored, NextJS has the [clearest workflow](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr). Here is the code for using a component without SSR in NextJS:
+Many SSR frameworks provide the option, with varying degrees of difficulty, to only render a component on the client side. This is what we need. Of the options I explored, NextJS has the [clearest workflow](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr). Here is the code for using a component without SSR in NextJS:
 
 ```js
 import dynamic from "next/dynamic";

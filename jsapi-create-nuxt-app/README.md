@@ -1,18 +1,5 @@
 # ArcGIS API for JavaScript with create-nuxt-app
 
-Integrating Vue with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) does not require much manual configuration. One requirement is having to copy the `@arcgis/core/assets` folder to the build. NuxtJS does not provide a clear method to do this during the build so, you can use [`ncp`](https://www.npmjs.com/package/ncp) to copy the files to the build directory on `postinstall`.
-
-```json
-// package.json
-{
-  "scripts": {
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./static/assets",
-    "postinstall": "npm run copy",
-    ...
-  },
-}
-```
-
 ## Rendering a Map
 
 The JS API can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).

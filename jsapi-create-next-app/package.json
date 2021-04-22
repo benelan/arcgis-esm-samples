@@ -1,21 +1,15 @@
 {
   "name": "jsapi-create-next-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "4.19.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
-    "postinstall": "npm run copy"
+    "start": "next start"
   },
   "dependencies": {
-    "@arcgis/core": "^4.18.1",
+    "@arcgis/core": "^4.19.0",
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1"
-  },
-  "devDependencies": {
-    "ncp": "^2.0.0"
   }
 }

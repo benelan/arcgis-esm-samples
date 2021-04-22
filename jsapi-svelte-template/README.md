@@ -1,20 +1,5 @@
 # ArcGIS API for JavaScript with Svelte
 
-Integrating Svelte with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) does not require much manual configuration. One requirement is having to copy the `@arcgis/core/assets` folder to the build. Svelte does not provide a clear method to do this during the build so, you can use [`ncp`](https://www.npmjs.com/package/ncp) to copy the files to the build directory on `postinstall`.
-
-```json
-// package.json
-{
-  "scripts": {
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
-    "postinstall": "npm run copy",
-    ...
-  },
-}
-```
-
----
-
 _Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.

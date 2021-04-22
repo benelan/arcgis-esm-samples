@@ -1,6 +1,6 @@
 # @arcgis/core
 
-The samples in this repo extend those [provided by Esri](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS API for JavaScript with various frameworks, module bundlers and build tools. [Here](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/ssr-esm/) is the accompying blog post.
+The samples in this repo extend those [provided by Esri](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS API for JavaScript with various frameworks, module bundlers and build tools. [Here](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/ssr-esm/) is the accompanying blog post.
 
 ## Get started
 
@@ -24,21 +24,6 @@ const view = new MapView({
   container: "viewDiv",
   map: map
 });
-```
-
-## Copy assets
-
-Make sure to copy the API’s assets, which includes styles, images, fonts, and localization files from the `@arcgis/core/assets` folder to your build directory. A simple way to accomplish this is to configure an NPM script that runs during your build process. For example, use npm to install [`ncp`](https://www.npmjs.com/package/ncp) and configure a script in package.json to copy the assets folder. Here’s a React example:
-
-```json
-// package.json
-{
-  "scripts": {
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./public/assets",
-    "postinstall": "npm run copy",
-    ...
-  },
-}
 ```
 
 ## Configure CSS

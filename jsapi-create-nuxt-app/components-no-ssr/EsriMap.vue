@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style>
-@import '@arcgis/core/assets/esri/themes/dark/main.css';
+@import 'https://js.arcgis.com/4.19/@arcgis/core/assets/esri/themes/light/main.css';
 
 html,
 body,

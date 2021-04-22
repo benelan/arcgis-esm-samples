@@ -1,19 +1,6 @@
 # ArcGIS API for JavaScript with Sapper
 
-Integrating Svelte with [`@arcgis/core`](https://www.npmjs.com/package/@arcgis/core) does not require much manual configuration. One requirement is having to copy the `@arcgis/core/assets` folder to the build. Sapper does not provide a clear method to do this during the build so, you can use [`ncp`](https://www.npmjs.com/package/ncp) to copy the files to the build directory on `postinstall`.
-
-```json
-// package.json
-{
-  "scripts": {
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./static/assets",
-    "postinstall": "npm run copy",
-    ...
-  },
-}
-```
-
-The API does not currently work with SSR, so we need to make sure the map component only renders on the client. We can do this using `onMount()` when importing the component.
+The JS API can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this using `onMount()` when importing the component.
 
 ```html
 <script>

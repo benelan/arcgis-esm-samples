@@ -1,18 +1,16 @@
 {
   "name": "jsapi-create-nuxt-app",
-  "version": "1.0.0",
+  "version": "4.19.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest",
-    "copy": "ncp ./node_modules/@arcgis/core/assets ./static/assets",
-    "postinstall": "npm run copy"
+    "test": "jest"
   },
   "dependencies": {
-    "@arcgis/core": "^4.18.1",
+    "@arcgis/core": "^4.19.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6"
   },
@@ -21,7 +19,6 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.5.0",
     "jest": "^26.5.0",
-    "ncp": "^2.0.0",
     "vue-jest": "^3.0.4"
   }
 }
