@@ -28,7 +28,7 @@ const view = new MapView({
 
 ## Configure CSS
 
-The final step is to set up the CSS. Choose a theme and then configure your code to copy the theme files from @arcgis/core/assets/esri/themes/ into your project. Here’s a React example:
+The final step is to set up the CSS:
 
 ```js
 @import "https://js.arcgis.com/4.20/@arcgis/core/assets/esri/themes/light/main.css";
