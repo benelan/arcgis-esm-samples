@@ -1,6 +1,6 @@
 {
   "name": "jsapi-create-nuxt-app",
-  "version": "4.20",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@arcgis/core": "^4.20.2",
+    "@arcgis/core": "^4.21.2",
     "core-js": "^3.15.2",
     "nuxt": "^2.15.7"
   },
