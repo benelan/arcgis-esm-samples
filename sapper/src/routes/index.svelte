@@ -8,6 +8,7 @@
 			EsriMap = module.default;
 	});
 </script>
+
 <style>
 	h1, p {
 		text-align: center;
