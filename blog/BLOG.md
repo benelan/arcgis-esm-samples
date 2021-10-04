@@ -1,8 +1,8 @@
 # Server Side Rendering Frameworks with @arcgis/core
 
-I am elated by the beta release of the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) ECMAScript Modules (ESM). The release is a major victory in the [campaign to modernize](https://www.youtube.com/watch?v=woTI3jB5Z2Q&feature=youtu.be&t=182) the ArcGIS API for JavaScript (JSAPI). Needless to say, I spent hours pouring over the ESM samples provided via the [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/master/esm-samples) Github repo. I then set out on the task of creating my own samples using Server Side Rendering (SSR) frameworks. I suggest taking a look at this [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/announcements/es-modules-are-coming-soon-in-the-arcgis-api-for-javascript/) if you aren’t using SSR frameworks.
+I am elated by the beta release of the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) ECMAScript Modules (ESM). The release is a major victory in the [campaign to modernize](https://www.youtube.com/watch?v=woTI3jB5Z2Q&feature=youtu.be&t=182) the ArcGIS API for JavaScript (JSAPI). Needless to say, I spent hours pouring over the ESM samples provided via the [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/master/esm-samples) GitHub repo. I then set out on the task of creating my own samples using Server Side Rendering (SSR) frameworks. I suggest taking a look at this [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/announcements/es-modules-are-coming-soon-in-the-arcgis-api-for-javascript/) if you aren’t using SSR frameworks.
 
-If you are here for examples, take a look at the [Github repo](https://github.com/benelan/arcgis-esm-samples).
+If you are here for examples, take a look at the [GitHub repo](https://github.com/benelan/arcgis-esm-samples).
 
 ## The First Attempt
 
@@ -46,13 +46,13 @@ Many SSR frameworks provide the option, with varying degrees of difficulty, to o
 ```js
 import dynamic from "next/dynamic";
 
-const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
+const EsriMap = dynamic(() => import("../components/EsriMap"), {
   ssr: false,
 });
 ```
 
-That's it. Now you can use the EsriMapWithNoSSR component and the map will render!
+That's it. Now you can use the EsriMap component and the map will render!
 
 ![Map in NextJS](./img/next_map.jpg)
 
-I found solutions for rendering a map in NuxtJS and Sapper as well, which are included in the [Github repo](https://github.com/benelan/arcgis-esm-samples). The samples contain additional framework specific documentation.
+I found solutions for rendering a map in NuxtJS and Sapper as well, which are included in the [GitHub repo](https://github.com/benelan/arcgis-esm-samples). The samples contain additional framework specific documentation.
