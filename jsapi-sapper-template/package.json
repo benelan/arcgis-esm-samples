@@ -1,7 +1,7 @@
 {
-  "name": "TODO",
+  "name": "jsapi-sapper-template",
   "description": "TODO",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "export NODE_OPTIONS=\"--max-old-space-size=5120\" && sapper dev",
     "build": "sapper build --legacy",
