@@ -1,6 +1,7 @@
 # ArcGIS API for JavaScript with Sapper
 
-**[Sapper development has ended](https://sapper.svelte.dev/docs#Before_we_begin) for Sapper, in favor of [SvelteKit](https://kit.svelte.dev/). I will not be updating this sample moving forward, so I suggest using the [jsapi-sveltekit-template]() I created instead.**
+### Deprecated
+**[Sapper development has ended](https://sapper.svelte.dev/docs#Before_we_begin) in favor of [SvelteKit](https://kit.svelte.dev/). I will not be updating this sample moving forward, so I suggest using the [`jsapi-sveltekit-template`](https://github.com/benelan/arcgis-esm-samples/tree/main/jsapi-sveltekit-template) one I created instead.**
 
 ---
 
