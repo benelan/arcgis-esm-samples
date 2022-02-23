@@ -1,3 +1,4 @@
+@import 'https://js.arcgis.com/4.23/@arcgis/core/assets/esri/themes/light/main.css';
 html,
 body {
   padding: 0;
@@ -14,5 +15,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-@import 'https://js.arcgis.com/4.21/@arcgis/core/assets/esri/themes/light/main.css';

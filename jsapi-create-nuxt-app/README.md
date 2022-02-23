@@ -4,7 +4,7 @@
 
 The JS API can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).
 
-```html
+```jsx
 <client-only>
   <EsriMap />
 </client-only>
@@ -70,7 +70,7 @@ Lastly, use the new Projection component in `pages/index.vue`:
 +      <Projection />
 ```
 
-The first time you start up the app after making these changes you will see a couple warning messages about file size and it will take some time to transpile. This is normal, have patience!
+The first time you start up the app after making these changes you will see a couple warning messages about file size and it will take some time to transpile. This is expected, have patience!
 
 
 **NOTE:** There are currently some issues with transpiling the modules for the Projection component and rendering the EsriMap component at the same time. At this point I'd suggest not mixing the two strategies. Either transpile the modules and work on the server side, or make sure that the code executes on the client, and forgo transpiling.

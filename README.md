@@ -31,5 +31,5 @@ const view = new MapView({
 The final step is to set up the CSS:
 
 ```js
-@import "https://js.arcgis.com/4.21/@arcgis/core/assets/esri/themes/light/main.css";
+@import "https://js.arcgis.com/4.23/@arcgis/core/assets/esri/themes/light/main.css";
 ```
