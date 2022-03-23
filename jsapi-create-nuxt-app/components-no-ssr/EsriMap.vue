@@ -1,5 +1,5 @@
 <template>
-  <div class="mapdiv"></div>
+  <div class="mapDiv"></div>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style>
-@import 'https://js.arcgis.com/4.21/@arcgis/core/assets/esri/themes/light/main.css';
+@import 'https://js.arcgis.com/4.23/@arcgis/core/assets/esri/themes/light/main.css';
 
 html,
 body,
@@ -66,7 +66,7 @@ body,
   height: 100%;
 }
 
-.mapdiv {
+.mapDiv {
   padding: 0;
   margin: 0;
   height: 400px;

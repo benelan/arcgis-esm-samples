@@ -2,15 +2,15 @@
 
 ## Rendering a Map
 
-The JS API can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).
+The JS API can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component. You can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).
 
-```html
+```jsx
 <client-only>
   <EsriMap />
 </client-only>
 ```
 
-However, `<client-only>` only skips rendering components on the server. The code will still execute which causes issues due to the absence of the DOM. The solution is to only import the component when on the client.
+However, `<client-only>` only skips rendering components on the server. The code will still execute, which causes issues due to the absence of the DOM. The solution is to only import the component when on the client.
 
 ```js
 export default {
@@ -22,11 +22,11 @@ export default {
 };
 ```
 
-Lastly, you may have noticed that the `EsriMap` component is in the `components-no-ssr` directory instead of the `components` one shipped with NuxtJS. A great thing about NuxtJS is that it automates importing files from `components` and routing in `pages`. However in this case, we do not want the map component to be imported until we are on the client side. Therefore, we created a new directory specifically for our non-ssr components so we can control when they are imported.
+Lastly, you may have noticed that the `EsriMap` component is in the `/components-no-ssr` directory instead of the `/components` one shipped with Nuxt. A great thing about Nuxt is that it automatically imports files from `/components` and creates routes in `/pages`. However, in this case you do not want to import the map component until it is on the client. Therefore, you can create a new directory specifically for the non-SSR components to control when they are imported.
 
 ## Non-Map Workflows
 
-If we are not rendering a map, then we do not need the DOM, and our GIS operations can be done on the server. The caveat is that @arcgis/core does not ship with CommonJS modules in order to keep the package size reasonable. In order to use the package in NuxtJS on the server, we need to transpile the modules. To set it up make the following change in `nuxt.config.js`:
+If you are not rendering a map, then GIS operations can be done on the server. The caveat is that `@arcgis/core` does not ship with CommonJS modules, in order to keep the package size reasonable. To use the package in Nuxt on the server, you need to transpile the modules by making the following change in `nuxt.config.js`:
 
 ```diff
 build: {
@@ -34,7 +34,7 @@ build: {
   }
 ```
 
-Next, create a simple new component for projection at `components/Projection.vue`:
+Next, create a simple new component for projection at `/components/Projection.vue`:
 
 ```html
 <template>
@@ -70,7 +70,7 @@ Lastly, use the new Projection component in `pages/index.vue`:
 +      <Projection />
 ```
 
-The first time you start up the app after making these changes you will see a couple warning messages about file size and it will take some time to transpile. This is normal, have patience!
+The first time you start up the app after making these changes you will see a couple warning messages about file size. It will also take a while to compile, so grab a quick coffee!
 
 
 **NOTE:** There are currently some issues with transpiling the modules for the Projection component and rendering the EsriMap component at the same time. At this point I'd suggest not mixing the two strategies. Either transpile the modules and work on the server side, or make sure that the code executes on the client, and forgo transpiling.
