@@ -75,6 +75,11 @@ The first time you start up the app after making these changes you will see a co
 
 **NOTE:** There are currently some issues with transpiling the modules for the Projection component and rendering the EsriMap component at the same time. At this point I'd suggest not mixing the two strategies. Either transpile the modules and work on the server side, or make sure that the code executes on the client, and forgo transpiling.
 
+
+## Known Issues
+
+This sample is subject to a [known issue](https://github.com/Esri/jsapi-resources/tree/master/esm-samples/webpack#known-issues) with the ArcGIS API for JavaScript `4.24`+ and Webpack `4`, which requires adding loaders to handle optional chaining and nullish coalescing.
+
 ---
 
 ## Build Setup
