@@ -1,8 +1,8 @@
-# ArcGIS API for JavaScript with create-nuxt-app
+# ArcGIS Core with NuxtJS
 
 ## Rendering a Map
 
-The JS API can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component. You can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).
+The ArcGIS Maps SDK for JavaScript can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component. You can do this using Vue's [client only component](https://nuxtjs.org/docs/2.x/features/nuxt-components#the-client-only-component).
 
 ```jsx
 <client-only>
@@ -17,8 +17,8 @@ export default {
   components: {
     EsriMap: () => {
       if (process.client) return import("../components-no-ssr/EsriMap");
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -42,25 +42,26 @@ Next, create a simple new component for projection at `/components/Projection.vu
 </template>
 
 <script>
-import * as pe from "@arcgis/core/geometry/projection.js";
-import Point from "@arcgis/core/geometry/Point.js";
+  import * as pe from "@arcgis/core/geometry/projection.js";
+  import Point from "@arcgis/core/geometry/Point.js";
 
-export default {
-  name: "Projection",
-  async mounted() {
-    pe.load()
-      .then(() => {
-        console.log(
-          pe.project(new Point({ x: -117, y: 34 }), { wkid: 3857 }).toJSON()
-        );
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  },
-};
+  export default {
+    name: "Projection",
+    async mounted() {
+      pe.load()
+        .then(() => {
+          console.log(
+            pe.project(new Point({ x: -117, y: 34 }), { wkid: 3857 }).toJSON()
+          );
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  };
 </script>
 ```
+
 Lastly, use the new Projection component in `pages/index.vue`:
 
 ```diff
@@ -72,9 +73,7 @@ Lastly, use the new Projection component in `pages/index.vue`:
 
 The first time you start up the app after making these changes you will see a couple warning messages about file size. It will also take a while to compile, so grab a quick coffee!
 
-
 **NOTE:** There are currently some issues with transpiling the modules for the Projection component and rendering the EsriMap component at the same time. At this point I'd suggest not mixing the two strategies. Either transpile the modules and work on the server side, or make sure that the code executes on the client, and forgo transpiling.
-
 
 ## Known Issues
 
@@ -122,7 +121,6 @@ More information about the usage of this directory in [the documentation](https:
 Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
 
 ### `pages`
 
