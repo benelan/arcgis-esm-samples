@@ -1,20 +1,4 @@
-# ArcGIS API for JavaScript with SvelteKit
-
-The JS API can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component. You can do this by dynamically importing the component in `onMount()`. Read [SvelteKit's FAQ answer about client side libraries](https://kit.svelte.dev/faq#integrations-how-do-i-use-a-client-side-only-library-that-depends-on-document-or-window) for more info.
-
-```html
-<script>
-  import { onMount } from 'svelte';
-  let EsriMap;
-
-  onMount(async () => {
-    const module = await import('../components/EsriMap.svelte');
-    EsriMap = module.default;
-  });
-</script>
-```
-
----
+# ArcGIS Core with Svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
@@ -24,13 +8,11 @@ If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
 # create a new project in the current directory
-npm init svelte@next
+npm create svelte@latest
 
 # create a new project in my-app
-npm init svelte@next my-app
+npm create svelte@latest my-app
 ```
-
-> Note: the `@next` is temporary
 
 ## Developing
 

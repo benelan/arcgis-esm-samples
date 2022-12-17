@@ -1,11 +1,11 @@
-# ArcGIS API for JavaScript with Sapper
+# ArcGIS Core with Sapper
 
 ### Deprecated
 **[Sapper development has ended](https://sapper.svelte.dev/docs#Before_we_begin) in favor of [SvelteKit](https://kit.svelte.dev/). I will not be updating this sample moving forward, so I suggest using the [`jsapi-sveltekit-template`](https://github.com/benelan/arcgis-esm-samples/tree/main/jsapi-sveltekit-template) one I created instead.**
 
 ---
 
-The JS API can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this using `onMount()` when importing the component.
+The ArcGIS Maps SDK for JavaScript can not render a map on the server side since it does not have access to the DOM. Therefore, we need to disable SSR for the map component. We can do this using `onMount()` when importing the component.
 
 ```html
 <script>

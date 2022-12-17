@@ -16,5 +16,6 @@
 <svelte:component this={EsriMap} />
 
 <style>
-  @import "https://js.arcgis.com/4.24/@arcgis/core/assets/esri/themes/light/main.css";
+  @import "https://js.arcgis.com/4.25/@arcgis/core/assets/esri/themes/light/main.css";
 </style>
+
