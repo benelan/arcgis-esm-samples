@@ -10,10 +10,10 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "svelte": "^3.44.0"
+    "svelte": "^3.49.0"
   },
   "type": "module",
   "dependencies": {
-    "@arcgis/core": "^4.23.0"
+    "@arcgis/core": "^4.24.7"
   }
 }
