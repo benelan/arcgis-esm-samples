@@ -1,4 +1,4 @@
-# @arcgis/core
+# ArcGIS Core with Sever Side Rendering Frameworks
 
 The samples in this repo were created for a [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/ssr-esm/), and extend those [provided by Esri](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS Maps SDK for JavaScript with Server Side Rendering frameworks (plus Svelte, because Svelte is great).
 
@@ -6,7 +6,7 @@ The samples in this repo were created for a [blog post](https://www.esri.com/arc
 
 Install the modules into your project:
 
-```js
+```sh
 npm install @arcgis/core
 ```
 
@@ -26,10 +26,12 @@ const view = new MapView({
 });
 ```
 
+The samples have their own READMEs for framework specific steps.
+
 ## Configure CSS
 
 The final step is to set up the CSS:
 
 ```css
-@import "https://js.arcgis.com/4.24/@arcgis/core/assets/esri/themes/light/main.css";
+@import "https://js.arcgis.com/4.25/@arcgis/core/assets/esri/themes/light/main.css";
 ```
