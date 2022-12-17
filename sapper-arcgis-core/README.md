@@ -1,7 +1,8 @@
 # ArcGIS Core with Sapper
 
 ### Deprecated
-**[Sapper development has ended](https://sapper.svelte.dev/docs#Before_we_begin) in favor of [SvelteKit](https://kit.svelte.dev/). I will not be updating this sample moving forward, so I suggest using the [`jsapi-sveltekit-template`](https://github.com/benelan/arcgis-esm-samples/tree/main/jsapi-sveltekit-template) one I created instead.**
+
+**[Sapper development has ended](https://sapper.svelte.dev/docs#Before_we_begin) in favor of [SvelteKit](https://kit.svelte.dev/). I will not be updating this sample moving forward, so I suggest using the [`sveltekit-arcgis-core`](https://github.com/benelan/arcgis-esm-samples/tree/main/sveltekit-arcgis-core) one I created instead.**
 
 ---
 
