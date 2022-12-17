@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "nextjs-arcgis-core",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@arcgis/core": "^4.24.7",
-    "next": "12.2.2",
+    "@arcgis/core": "^4.25.5",
+    "@next/font": "13.0.7",
+    "next": "13.0.7",
     "react": "18.2.0",
     "react-dom": "18.2.0"
-  },
-  "devDependencies": {
-    "eslint": "8.20.0",
-    "eslint-config-next": "12.2.2"
   }
 }

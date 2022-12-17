@@ -1,13 +1,12 @@
-# ArcGIS API for JavaScript with create-next-app
+# ArcGIS Core with NextJS
 
-The JS API can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component:
+The ArcGIS Maps SDK for JavaScript can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component:
 
 ```js
 const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
   ssr: false,
 });
 ```
-
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
