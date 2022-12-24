@@ -9,12 +9,11 @@
 
 <script>
 export default {
-  name: "IndexPage",
+  name: 'IndexPage',
   components: {
     EsriMap: () => {
-      if (process.client) return import("../components-no-ssr/EsriMap");
-    },
-  },
+      if (process.client) return import('../components-no-ssr/EsriMap');
+    }
+  }
 };
 </script>
-

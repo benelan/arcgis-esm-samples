@@ -1,22 +1,25 @@
-import Head from "next/head";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
-const inter = Inter({ subsets: ["latin"] });
+import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from '../styles/Home.module.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export async function getStaticProps() {
   return {
     props: {
-      ARCGIS_KEY: process.env.ARCGIS_KEY,
-    },
+      ARCGIS_KEY: process.env.ARCGIS_KEY
+    }
   };
 }
 
-// ArcGIS Core does not currently work with SSR,
-// so we need to disable it for the map component
-const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
-  ssr: false,
+/**
+ * ArcGIS Core does not currently work with SSR,
+ * so we need to disable it for the map component
+ */
+const EsriMapWithNoSSR = dynamic(() => import('../components/EsriMap'), {
+  ssr: false
 });
 
 export default function Home({ ARCGIS_KEY }) {
@@ -40,7 +43,7 @@ export default function Home({ ARCGIS_KEY }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{" "}
+              By{' '}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
