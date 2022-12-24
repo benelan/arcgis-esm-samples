@@ -10,13 +10,13 @@ The ArcGIS Maps SDK for JavaScript can not render a map on the server side since
 
 ```html
 <script>
-    import { onMount } from 'svelte';
-    let EsriMap;
+  import { onMount } from 'svelte';
+  let EsriMap;
 
-    onMount(async () => {
-        const module = await import('../components/EsriMap.svelte');
-        EsriMap = module.default;
-    });
+  onMount(async () => {
+    const module = await import('../components/EsriMap.svelte');
+    EsriMap = module.default;
+  });
 </script>
 ```
 
@@ -68,10 +68,10 @@ You now have a fully functional Sapper project! To get started developing, consu
 
 By default, the template uses plain JavaScript. If you wish to use TypeScript instead, you need some changes to the project:
 
--   Add `typescript` as well as typings as dependences in `package.json`
--   Configure the bundler to use [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess) and transpile the TypeScript code.
--   Add a `tsconfig.json` file
--   Update the project code to TypeScript
+- Add `typescript` as well as typings as dependences in `package.json`
+- Configure the bundler to use [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess) and transpile the TypeScript code.
+- Add a `tsconfig.json` file
+- Update the project code to TypeScript
 
 The template comes with a script that will perform these changes for you by running
 
@@ -101,9 +101,9 @@ This is the heart of your Sapper app. There are two kinds of routes — _pages_,
 
 There are three simple rules for naming the files that define your routes:
 
--   A file called `src/routes/about.svelte` corresponds to the `/about` route. A file called `src/routes/blog/[slug].svelte` corresponds to the `/blog/:slug` route, in which case `params.slug` is available to the route
--   The file `src/routes/index.svelte` (or `src/routes/index.js`) corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
--   Files and directories with a leading underscore do _not_ create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would _not_ create a `/_helpers/datetime` route.
+- A file called `src/routes/about.svelte` corresponds to the `/about` route. A file called `src/routes/blog/[slug].svelte` corresponds to the `/blog/:slug` route, in which case `params.slug` is available to the route
+- The file `src/routes/index.svelte` (or `src/routes/index.js`) corresponds to the root of your app. `src/routes/about/index.svelte` is treated the same as `src/routes/about.svelte`.
+- Files and directories with a leading underscore do _not_ create routes. This allows you to colocate helper modules and components with the routes that depend on them — for example you could have a file called `src/routes/_helpers/datetime.js` and it would _not_ create a `/_helpers/datetime` route.
 
 #### src/node_modules/images
 

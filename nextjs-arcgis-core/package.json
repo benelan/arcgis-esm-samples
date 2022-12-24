@@ -1,18 +1,18 @@
 {
-    "name": "nextjs-arcgis-core",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-    },
-    "dependencies": {
-        "@arcgis/core": "^4.25.5",
-        "@next/font": "13.0.7",
-        "next": "13.0.7",
-        "react": "18.2.0",
-        "react-dom": "18.2.0"
-    }
+  "name": "nextjs-arcgis-core",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@arcgis/core": "^4.25.5",
+    "@next/font": "13.0.7",
+    "next": "13.0.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
 }
