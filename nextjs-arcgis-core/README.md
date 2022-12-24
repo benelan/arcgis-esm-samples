@@ -12,9 +12,6 @@ This sample also demonstrates passing an [ArcGIS API key](https://developers.arc
 
 Add your API key to [`.env.local`](https://github.com/benelan/arcgis-esm-samples/blob/main/nextjs-arcgis-core/.env.local) and [uncomment this line](https://github.com/benelan/arcgis-esm-samples/blob/4bae3959b02d6dff79f2b0c322d0f3143f47f625/nextjs-arcgis-core/components/EsriMap.jsx#L22) in the map component. Make sure to follow the [documented best practices](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/security-best-practices/#api-key-security) for managing your API keys.
 
-
-
-
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
