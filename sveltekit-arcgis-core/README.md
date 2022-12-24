@@ -4,13 +4,13 @@ The ArcGIS Maps SDK for JavaScript can not render a map on the server, since it 
 
 ```html
 <script>
-  import { onMount } from 'svelte';
-  let EsriMap;
+    import { onMount } from 'svelte';
+    let EsriMap;
 
-  onMount(async () => {
-    const module = await import('../components/EsriMap.svelte');
-    EsriMap = module.default;
-  });
+    onMount(async () => {
+        const module = await import('../components/EsriMap.svelte');
+        EsriMap = module.default;
+    });
 </script>
 ```
 

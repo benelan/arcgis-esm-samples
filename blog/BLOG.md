@@ -47,7 +47,7 @@ Many SSR frameworks provide the option, with varying degrees of difficulty, to o
 import dynamic from 'next/dynamic';
 
 const EsriMap = dynamic(() => import('../components/EsriMap'), {
-  ssr: false
+    ssr: false
 });
 ```
 

@@ -17,12 +17,12 @@ import EsriMap from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 
 const map = new EsriMap({
-  basemap: 'topo-vector'
+    basemap: 'topo-vector'
 });
 
 const view = new MapView({
-  container: 'viewDiv',
-  map: map
+    container: 'viewDiv',
+    map: map
 });
 ```
 

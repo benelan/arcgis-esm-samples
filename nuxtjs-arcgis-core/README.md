@@ -6,7 +6,7 @@ The ArcGIS Maps SDK for JavaScript can not render a map on the server, since it 
 
 ```jsx
 <client-only>
-  <EsriMap />
+    <EsriMap />
 </client-only>
 ```
 
@@ -14,11 +14,11 @@ However, `<client-only>` only skips rendering components on the server. The code
 
 ```js
 export default {
-  components: {
-    EsriMap: () => {
-      if (process.client) return import('../components-no-ssr/EsriMap');
+    components: {
+        EsriMap: () => {
+            if (process.client) return import('../components-no-ssr/EsriMap');
+        }
     }
-  }
 };
 ```
 
@@ -38,27 +38,31 @@ Next, create a simple new component for projection at `/components/Projection.vu
 
 ```html
 <template>
-  <p>Check the console for point projection.</p>
+    <p>Check the console for point projection.</p>
 </template>
 
 <script>
-  import * as pe from '@arcgis/core/geometry/projection.js';
-  import Point from '@arcgis/core/geometry/Point.js';
+    import * as pe from '@arcgis/core/geometry/projection.js';
+    import Point from '@arcgis/core/geometry/Point.js';
 
-  export default {
-    name: 'Projection',
-    async mounted() {
-      pe.load()
-        .then(() => {
-          console.log(
-            pe.project(new Point({ x: -117, y: 34 }), { wkid: 3857 }).toJSON()
-          );
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  };
+    export default {
+        name: 'Projection',
+        async mounted() {
+            pe.load()
+                .then(() => {
+                    console.log(
+                        pe
+                            .project(new Point({ x: -117, y: 34 }), {
+                                wkid: 3857
+                            })
+                            .toJSON()
+                    );
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+    };
 </script>
 ```
 
