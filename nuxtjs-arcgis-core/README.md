@@ -16,9 +16,9 @@ However, `<client-only>` only skips rendering components on the server. The code
 export default {
   components: {
     EsriMap: () => {
-      if (process.client) return import("../components-no-ssr/EsriMap");
-    },
-  },
+      if (process.client) return import('../components-no-ssr/EsriMap');
+    }
+  }
 };
 ```
 
@@ -42,11 +42,11 @@ Next, create a simple new component for projection at `/components/Projection.vu
 </template>
 
 <script>
-  import * as pe from "@arcgis/core/geometry/projection.js";
-  import Point from "@arcgis/core/geometry/Point.js";
+  import * as pe from '@arcgis/core/geometry/projection.js';
+  import Point from '@arcgis/core/geometry/Point.js';
 
   export default {
-    name: "Projection",
+    name: 'Projection',
     async mounted() {
       pe.load()
         .then(() => {
@@ -57,7 +57,7 @@ Next, create a simple new component for projection at `/components/Projection.vu
         .catch((error) => {
           console.log(error);
         });
-    },
+    }
   };
 </script>
 ```

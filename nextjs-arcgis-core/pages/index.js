@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import dynamic from "next/dynamic";
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from '../styles/Home.module.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 // ArcGIS Core does not currently work with SSR, so we need to disable it for the map component
-const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
-  ssr: false,
+const EsriMapWithNoSSR = dynamic(() => import('../components/EsriMap'), {
+  ssr: false
 });
 
 export default function Home() {
@@ -126,5 +126,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }

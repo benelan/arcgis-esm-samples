@@ -17,11 +17,11 @@ import EsriMap from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 
 const map = new EsriMap({
-  basemap: "topo-vector"
+  basemap: 'topo-vector'
 });
 
 const view = new MapView({
-  container: "viewDiv",
+  container: 'viewDiv',
   map: map
 });
 ```
@@ -33,5 +33,5 @@ The samples have their own READMEs for framework specific steps.
 The final step is to set up the CSS:
 
 ```css
-@import "https://js.arcgis.com/4.25/@arcgis/core/assets/esri/themes/light/main.css";
+@import 'https://js.arcgis.com/4.25/@arcgis/core/assets/esri/themes/light/main.css';
 ```
