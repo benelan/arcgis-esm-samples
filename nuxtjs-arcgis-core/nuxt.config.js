@@ -7,33 +7,30 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-  ],
+  buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-  ],
+  modules: [],
 
   build: {
     // transpile: ["@arcgis/core"],
@@ -44,23 +41,23 @@ export default {
           and: [/node_modules/], // exclude libraries in node_modules ...
           not: [
             // except for ones that needs to be transpiled because they use modern syntax
-            /@arcgis[\\/]core/,
-          ],
+            /@arcgis[\\/]core/
+          ]
         },
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             plugins: [
               // these are required by Webpack 4 since @arcgis/core@4.24
               [
-                "@babel/plugin-proposal-nullish-coalescing-operator",
-                { loose: true },
+                '@babel/plugin-proposal-nullish-coalescing-operator',
+                { loose: true }
               ],
-              ["@babel/plugin-proposal-optional-chaining", { loose: true }],
-            ],
-          },
-        },
+              ['@babel/plugin-proposal-optional-chaining', { loose: true }]
+            ]
+          }
+        }
       });
-    },
-  },
-}
+    }
+  }
+};
