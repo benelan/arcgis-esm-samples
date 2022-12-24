@@ -3,16 +3,24 @@ import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 import ArcGISMap from '@arcgis/core/Map';
 import DictionaryRenderer from '@arcgis/core/renderers/DictionaryRenderer';
 import MapView from '@arcgis/core/views/MapView';
+import esriConfig from '@arcgis/core/config';
 import styles from '../styles/EsriMap.module.css';
 
-function EsriMap() {
+export default function EsriMap({ KEY }) {
   const mapDiv = useRef(null);
 
   useEffect(() => {
+    /**
+     * Initialize application
+     */
     if (mapDiv.current) {
       /**
-       * Initialize application
+       * Make sure to follow the documented best practices for managing API KEYs, including
+       * one per app, frequent rotations, restrictive scopes and referrers, and monitoring usage.
+       * https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys
        */
+      // esriConfig.apiKey = KEY; // add your key to .env.local and uncomment this line
+
       const map = new ArcGISMap({
         basemap: 'gray-vector'
       });
@@ -120,5 +128,3 @@ function EsriMap() {
 
   return <div className={styles.mapDiv} ref={mapDiv}></div>;
 }
-
-export default EsriMap;

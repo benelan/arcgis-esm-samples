@@ -6,12 +6,23 @@ import styles from '../styles/Home.module.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// ArcGIS Core does not currently work with SSR, so we need to disable it for the map component
+export async function getStaticProps() {
+  return {
+    props: {
+      ARCGIS_KEY: process.env.ARCGIS_KEY
+    }
+  };
+}
+
+/**
+ * ArcGIS Core does not currently work with SSR,
+ * so we need to disable it for the map component
+ */
 const EsriMapWithNoSSR = dynamic(() => import('../components/EsriMap'), {
   ssr: false
 });
 
-export default function Home() {
+export default function Home({ ARCGIS_KEY }) {
   return (
     <>
       <Head>
@@ -44,8 +55,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        <EsriMapWithNoSSR />
+        <EsriMapWithNoSSR KEY={ARCGIS_KEY} />
         <div className={styles.center}>
           <Image
             className={styles.logo}
