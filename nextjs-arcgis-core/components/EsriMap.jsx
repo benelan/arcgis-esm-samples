@@ -72,7 +72,6 @@ export default function EsriMap({ KEY }) {
 
       const scale = 36112;
       const layer1 = new FeatureLayer({
-        popupTemplate,
         url: 'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Alternative_Fuel_Station_March2018/FeatureServer',
         outFields: ['*'],
         popupTemplate,
