@@ -3,16 +3,24 @@ import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import ArcGISMap from "@arcgis/core/Map";
 import DictionaryRenderer from "@arcgis/core/renderers/DictionaryRenderer";
 import MapView from "@arcgis/core/views/MapView";
+import esriConfig from "@arcgis/core/config";
 import styles from "../styles/EsriMap.module.css";
 
-function EsriMap() {
+export default function EsriMap({ KEY }) {
   const mapDiv = useRef(null);
 
   useEffect(() => {
-    if (mapDiv.current) {
       /**
        * Initialize application
        */
+    if (mapDiv.current) {
+      /**
+       * Make sure to follow the documented best practices for managing API KEYs, including
+       * one per app, frequent rotations, restrictive scopes and referrers, and monitoring usage.
+       * https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys
+       */
+      // esriConfig.apiKey = KEY; // add your key to .env.local and uncomment this line
+
       const map = new ArcGISMap({
         basemap: "gray-vector",
       });
@@ -64,13 +72,11 @@ function EsriMap() {
 
       const scale = 36112;
       const layer1 = new FeatureLayer({
-        url:
-          "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Alternative_Fuel_Station_March2018/FeatureServer",
+        url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Alternative_Fuel_Station_March2018/FeatureServer",
         outFields: ["*"],
         popupTemplate,
         renderer: new DictionaryRenderer({
-          url:
-            "https://jsapi.maps.arcgis.com/sharing/rest/content/items/30cfbf36efd64ccf92136201d9e852af",
+          url: "https://jsapi.maps.arcgis.com/sharing/rest/content/items/30cfbf36efd64ccf92136201d9e852af",
           fieldMap: {
             fuel_type: "Fuel_Type_Code",
           },
@@ -97,13 +103,11 @@ function EsriMap() {
       });
 
       const layer2 = new FeatureLayer({
-        url:
-          "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Alternative_Fuel_Station_March2018/FeatureServer",
+        url: "https://services1.arcgis.com/4yjifSiIG17X0gW4/arcgis/rest/services/Alternative_Fuel_Station_March2018/FeatureServer",
         outFields: ["*"],
         popupTemplate,
         renderer: new DictionaryRenderer({
-          url:
-            "https://jsapi.maps.arcgis.com/sharing/rest/content/items/30cfbf36efd64ccf92136201d9e852af",
+          url: "https://jsapi.maps.arcgis.com/sharing/rest/content/items/30cfbf36efd64ccf92136201d9e852af",
           fieldMap: {
             fuel_type: "Fuel_Type_Code",
             connector_types: "EV_Connector_Types",
@@ -124,5 +128,3 @@ function EsriMap() {
 
   return <div className={styles.mapDiv} ref={mapDiv}></div>;
 }
-
-export default EsriMap;

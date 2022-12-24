@@ -1,17 +1,25 @@
-import Head from 'next/head'
+import Head from "next/head";
 import dynamic from "next/dynamic";
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
+const inter = Inter({ subsets: ["latin"] });
 
-const inter = Inter({ subsets: ['latin'] })
+export async function getStaticProps() {
+  return {
+    props: {
+      ARCGIS_KEY: process.env.ARCGIS_KEY,
+    },
+  };
+}
 
-// ArcGIS Core does not currently work with SSR, so we need to disable it for the map component
+// ArcGIS Core does not currently work with SSR,
+// so we need to disable it for the map component
 const EsriMapWithNoSSR = dynamic(() => import("../components/EsriMap"), {
   ssr: false,
 });
 
-export default function Home() {
+export default function Home({ ARCGIS_KEY }) {
   return (
     <>
       <Head>
@@ -32,7 +40,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -44,8 +52,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        <EsriMapWithNoSSR />
+        <EsriMapWithNoSSR KEY={ARCGIS_KEY} />
         <div className={styles.center}>
           <Image
             className={styles.logo}
@@ -126,5 +133,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
