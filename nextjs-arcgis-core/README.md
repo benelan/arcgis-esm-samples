@@ -8,6 +8,10 @@ const EsriMapWithNoSSR = dynamic(() => import('../components/EsriMap'), {
 });
 ```
 
+This sample also demonstrates passing an [ArcGIS API key](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/api-keys) to the map component using [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) in [`pages/index.js`](https://github.com/benelan/arcgis-esm-samples/blob/main/nextjs-arcgis-core/pages/index.js), since it can [only be exported from pages](https://nextjs.org/docs/basic-features/data-fetching/get-static-props#where-can-i-use-getstaticprops). The API key is then passed down to the map component as a prop.
+
+Add your API key to [`.env.local`](https://github.com/benelan/arcgis-esm-samples/blob/main/nextjs-arcgis-core/.env.local) and [uncomment this line](https://github.com/benelan/arcgis-esm-samples/blob/4bae3959b02d6dff79f2b0c322d0f3143f47f625/nextjs-arcgis-core/components/EsriMap.jsx#L22) in the map component. Make sure to follow the [documented best practices](https://developers.arcgis.com/documentation/mapping-apis-and-services/security/security-best-practices/#api-key-security) for managing your API keys.
+
 ---
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
