@@ -1,4 +1,4 @@
-# ArcGIS Core with NextJS
+# @arcgis/core with NextJS
 
 The ArcGIS Maps SDK for JavaScript can not render a map on the server, since it does not have access to the DOM. Therefore, you need to disable SSR for the map component:
 

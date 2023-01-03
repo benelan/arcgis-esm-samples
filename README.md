@@ -1,4 +1,4 @@
-# ArcGIS Core with Sever Side Rendering Frameworks
+# @arcgis/core with Sever Side Rendering Frameworks
 
 The samples in this repo were created for a [blog post](https://www.esri.com/arcgis-blog/products/js-api-arcgis/developers/ssr-esm/), and extend those [provided by Esri](https://github.com/Esri/jsapi-resources/tree/master/esm-samples). The samples integrate the [@arcgis/core](https://www.npmjs.com/package/@arcgis/core) build of the ArcGIS Maps SDK for JavaScript with Server Side Rendering frameworks (plus Svelte, because Svelte is great).
 

@@ -1,4 +1,4 @@
-# ArcGIS Core with NuxtJS
+# @arcgis/core with NuxtJS
 
 ## Rendering a Map
 

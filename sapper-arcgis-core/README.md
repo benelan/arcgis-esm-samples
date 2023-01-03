@@ -1,4 +1,4 @@
-# ArcGIS Core with Sapper
+# @arcgis/core with Sapper
 
 ### Deprecated
 
