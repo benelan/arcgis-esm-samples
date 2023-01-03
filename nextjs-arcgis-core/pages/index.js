@@ -14,10 +14,7 @@ export async function getStaticProps() {
   };
 }
 
-/**
- * ArcGIS Core does not currently work with SSR,
- * so we need to disable it for the map component
- */
+// @arcgis/core does not currently work with SSR, so we need to disable it for the map component
 const EsriMapWithNoSSR = dynamic(() => import('../components/EsriMap'), {
   ssr: false
 });
